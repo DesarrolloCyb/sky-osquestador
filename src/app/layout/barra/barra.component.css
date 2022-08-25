@@ -1,0 +1,106 @@
+/************ TIPOGRAFIA DE LA BARRA LATERAL ************/
+
+a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15;
+    color: #fbfbfb;
+    text-decoration: none;
+}
+
+p {
+    color: #fff;
+    font-size: 13px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/************END TIPOGRAFIA DE LA BARRA LATERAL ************/
+
+.PageContainer {
+    height: 100%;
+    width: 100%;
+    background: #edf0f5;
+}
+
+.MySideBar {
+    /* border-radius: 0 50px 50px 0; */
+    height: 100%;
+    width: auto;
+    background: #349ae1
+}
+
+.MySideBar .bar-conatiner {
+    place-content: center;
+    padding: 0px;
+}
+
+.MySideBar .list-items {
+    padding-top: 20px;
+    align-items: center;
+}
+
+.MySideBar .list-item i.pi {
+    margin-right: 5px;
+}
+
+.MySideBar .list-items .list-item {
+    font-size: 18px;
+    font-weight: lighter;
+    color: white;
+    padding: 10px 20px;
+    font-family: Roboto;
+    cursor: pointer;
+
+}
+
+.MySideBar .list-items .list-item:hover {
+    /* color: rgb(220, 209, 3); */
+    font-weight: bold;
+    border-radius: 50px;
+    /* box-shadow: 1px 1px 1px rgba(252, 248, 248, 0.501); */
+}
+
+
+.MySideBar .list-items .list-item:before {
+    /* //El cosiito que aparece del lado izquierdo */
+    content: " ";
+    position: absolute;
+    top: auto;
+    left: 0px;
+    height: 30px;
+    width: 3px;
+    background-color: #ffffff;
+    /* //Set opacity 0 by default */
+    opacity: 2;
+
+    /* //Aimacion */
+    transform: scaleY(0);
+    transition: transform 0.3s, opacity 0.2s;
+}
+
+.MySideBar .list-items .list-item:hover::before {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+
+.MySideBar .logoContainer  {
+    width: 10rem;
+    height: 3.8rem;
+    background-color: white;
+/* PRENDER EL BOTON CADA QUE PASE EL CURSOSR */
+}
+
+.MySideBar .logo img {
+    /* padding-top: auto; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
+    max-width: 100px;
+
+}

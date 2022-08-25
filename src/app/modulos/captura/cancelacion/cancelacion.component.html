@@ -1,0 +1,56 @@
+<div class="container" style="padding: 10px;">
+  <mat-card>
+    <mat-card-title class="fw-light">Formulario de Cancelación</mat-card-title>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo de Cancelación</mat-label>
+          <mat-select [formControl]="selectFormControl" required>
+            <mat-option *ngFor="let tipo of tipocancelacion" [value]="tipo">
+              {{tipo.nombre}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="cancelacionControl.hasError('required')">Please choose an animal</mat-error>
+          <mat-hint>{{cancelacionControl.value?.sound}}</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Número de cuenta</mat-label>
+          <input matInput placeholder="15 digitos">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Orde de Servicio</mat-label>
+          <input matInput placeholder="15 digitos">
+        </mat-form-field>
+      </div>
+
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>País</mat-label>
+            <mat-select [formControl]="PaisControl" required>
+              <mat-option *ngFor="let pais of Pais" [value]="pais">
+                {{pais.nombre}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="PaisControl.hasError('required')">Escoja un país</mat-error>
+            <mat-hint>{{PaisControl.value?.sound}}</mat-hint>
+          </mat-form-field>
+        </div>
+
+
+
+    </div>
+
+
+
+    <mat-card-actions align="end">
+      <button mat-button>Limpiar</button>
+      <button mat-button>Enviar</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

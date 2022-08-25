@@ -1,0 +1,45 @@
+a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15;
+    color: #6d8391;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    color: #6d8391;
+    font-size: 13px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    ;
+    color: #6d8391;
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 0;
+
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    ;
+
+    color: #6d8391;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    ;
+
+    color: #6d8391;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.ModuleContainer{
+  padding-left: 10px;
+
+}

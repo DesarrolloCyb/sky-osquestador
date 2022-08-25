@@ -1,0 +1,23 @@
+.WindowContainer {
+  /*  Contenedor Principal add*/
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: #edf0f5;
+}
+
+
+.WindowContainer .barUpContainer{
+  /* CONTENEDOR DE LA BARRA */
+height: 250px;
+width: 100%;
+}
+
+
+
+.WindowContainer .page{
+  /* CONTENEDOR DE LA PAGINA DE LA BARRA*/
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}

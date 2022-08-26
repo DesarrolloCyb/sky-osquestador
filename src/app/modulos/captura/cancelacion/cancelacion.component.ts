@@ -79,8 +79,11 @@ input_agente:any;
   ) { }
 
   ngOnInit(): void {
+
     this.getTry()
   }
+
+
 
   getTry(){
     let APIurl= ' https://localhost:44372/api/Formularios/ObtenerCuenta';
@@ -91,3 +94,4 @@ input_agente:any;
   }
 
 }
+//https://github.com/DesarrolloCyb/sky-osquestador.git

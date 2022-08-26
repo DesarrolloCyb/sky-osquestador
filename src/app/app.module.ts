@@ -21,9 +21,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 //▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬PRIME NG ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 import {ButtonModule} from 'primeng/button';
+import { SharedModule } from 'primeng/api';
+import { CapturaComponent } from './modulos/captura/captura.component';
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +37,8 @@ import {ButtonModule} from 'primeng/button';
     BarraComponent,
     HomeComponent,
     Error404Component,
-    CancelacionComponent
+    CancelacionComponent,
+    CapturaComponent
 
   ],
   imports: [
@@ -48,7 +54,10 @@ import {ButtonModule} from 'primeng/button';
     MatFormFieldModule,
     MatExpansionModule,
     MatInputModule,
-    ButtonModule
+    ButtonModule,
+    FormsModule,
+    SharedModule
+
 
 
   ],

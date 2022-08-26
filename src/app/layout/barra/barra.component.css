@@ -1,7 +1,7 @@
 /************ TIPOGRAFIA DE LA BARRA LATERAL ************/
 
-a {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+a{
+    font-family: 'Monaco', Sans-serif;
     font-size: 15;
     color: #fbfbfb;
     text-decoration: none;
@@ -48,7 +48,7 @@ h1 {
 }
 
 .MySideBar .list-items .list-item {
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: lighter;
     color: white;
     padding: 10px 20px;
@@ -89,18 +89,18 @@ h1 {
 
 
 .MySideBar .logoContainer  {
-    width: 10rem;
+  /* PRENDER EL BOTON CADA QUE PASE EL CURSOSR */
+    width: 10.9rem;
     height: 3.8rem;
     background-color: white;
-/* PRENDER EL BOTON CADA QUE PASE EL CURSOSR */
+
 }
 
 .MySideBar .logo img {
     /* padding-top: auto; */
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 10rem;
-    max-width: 100px;
+    margin: auto;
+    width: auto;
+    max-width: 110px;
 
 }

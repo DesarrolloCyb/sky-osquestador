@@ -40,7 +40,7 @@ import {MatButtonModule} from '@angular/material/button';
   declarations: [
 
     QuejasComponent,
-    CapturaComponent,
+
   ],
   imports: [
     CommonModule,

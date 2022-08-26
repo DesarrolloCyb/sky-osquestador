@@ -9,9 +9,9 @@ import { MatDialog } from '@angular/material/dialog'
   styleUrls: ['./captura.component.css']
 })
 export class CapturaComponent implements OnInit {
-  dialog!: MatDialog;
-  constructor(
 
+  constructor(
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class CapturaComponent implements OnInit {
   }
 
 
-  openFormulario() {
+  openAvisos() {
     this.dialog.open(CancelacionComponent, {
       width: "55rem"
     });

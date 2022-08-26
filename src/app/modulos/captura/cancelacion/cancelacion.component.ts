@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+//---------SERVICIOS---------
+import {SharedService} from 'src/app/services/shared.service';
+
+
 
 interface TipoCancelacion {
   value: number;
@@ -19,6 +23,16 @@ interface Pais {
 export class CancelacionComponent implements OnInit {
 
 //▬▬▬▬▬▬▬▬VARIABLES DE ASIGNACION▬▬▬▬▬▬▬▬▬▬▬▬
+input_id = 0;
+input_tipocancelacion:any;
+input_cuenta:number = 0;
+input_pais:any;
+input_ordenServicio: any;
+input_fechaCaptura:any;
+input_fechaCacnelacion:any;
+input_status:any;
+input_agente:any;
+
 
 
 //▬▬▬▬▬▬▬▬VALIDACION DE DROPDOWN▬▬▬▬▬▬▬▬▬▬▬▬
@@ -58,9 +72,22 @@ export class CancelacionComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  lista:any [] = []
+
+  constructor(
+    private service:SharedService
+  ) { }
 
   ngOnInit(): void {
+    this.getTry()
+  }
+
+  getTry(){
+    let APIurl= ' https://localhost:44372/api/Formularios/ObtenerCuenta';
+    this.service.getTry(APIurl).subscribe(data =>{
+      this.lista = data;
+      console.log('RESPUESTA DE LA API:  \n',this.lista)
+    });
   }
 
 }

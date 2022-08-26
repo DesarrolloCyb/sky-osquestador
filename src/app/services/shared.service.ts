@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  APIurl= ' https://localhost:44372/api/Formularios';
+
 
 
 
@@ -15,8 +15,8 @@ export class SharedService {
     private http: HttpClient
   ) { }
 
-    getTry():Observable<any[]>{
-      return this.http.get<any>(this.APIurl);
+    getTry(Apiurl:any):Observable<any[]>{
+      return this.http.get<any>(Apiurl);
     }
 
 

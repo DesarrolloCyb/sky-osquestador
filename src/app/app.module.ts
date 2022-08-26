@@ -21,13 +21,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬PRIME NG ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 import {ButtonModule} from 'primeng/button';
 import { SharedModule } from 'primeng/api';
 import { CapturaComponent } from './modulos/captura/captura.component';
 
+//▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬SERVICES▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+import { SharedService } from './services/shared.service'
+import {HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
@@ -42,6 +45,8 @@ import { CapturaComponent } from './modulos/captura/captura.component';
 
   ],
   imports: [
+    //Modulos de angular
+    HttpClientModule,
     //Librerias
     BrowserModule,
     AppRoutingModule,
@@ -56,12 +61,16 @@ import { CapturaComponent } from './modulos/captura/captura.component';
     MatInputModule,
     ButtonModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
 
 
 
   ],
-  providers: [],
+  providers: [
+    SharedService
+  ],
+
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

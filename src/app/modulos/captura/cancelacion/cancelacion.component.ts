@@ -73,6 +73,7 @@ input_agente:any;
   ];
 
   lista:any [] = []
+  values: any;
 
   constructor(
     private service:SharedService
@@ -80,16 +81,49 @@ input_agente:any;
 
   ngOnInit(): void {
 
+
+
+      // input_tipocancelacion: 'Tipo 1',
+      // input_cuenta: '12313',
+      // input_pais: '13213',
+      // input_ordenServicio: '0132',
+      // input_fechaCaptura: '2022-08-26T10:28:00',
+      // input_fechaCacnelacion: '2022-08-26T10:28:00',
+      // input_status: 'Pendiente',
+      // input_agente: 'Juan'
+    
+
+    
+    this.values = {
+      "id": 7,
+      "tipoCancelacion": "string",
+     
+    }
+      
+    console.log(this.values)
+
+    this.postTry(this.values)
+
+
+    console.log('Agregando...')
     this.getTry()
   }
 
 
 
   getTry(){
-    let APIurl= ' https://localhost:44372/api/Formularios/ObtenerCuenta';
-    this.service.getTry(APIurl).subscribe(data =>{
+  
+    this.service.getTry().subscribe(data =>{
       this.lista = data;
       console.log('RESPUESTA DE LA API:  \n',this.lista)
+    });
+  }
+
+  postTry(myValues:any){
+  
+    this.service.postTry(myValues).subscribe(res =>{
+      
+      alert(res.toString)
     });
   }
 

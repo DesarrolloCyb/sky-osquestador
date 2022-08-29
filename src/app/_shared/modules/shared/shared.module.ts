@@ -1,10 +1,12 @@
+import { PanelModule } from 'primeng/panel';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { ConfirmComponent } from './../../../_components/confirm/confirm.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorMessageComponent } from './../../../_components/error-message/error-message.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -27,8 +29,18 @@ import {
   OnlyNumbersDirective,
   UppercaseDirective,
 } from '@directives';
+import { ToastModule } from 'primeng/toast';
+import { DialogModule } from 'primeng/dialog';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { TableModule } from 'primeng/table';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
+  imports:[
+
+  ],
   declarations: [
     ErrorMessageComponent,
     OnlyAlphabetsDirective,
@@ -36,9 +48,10 @@ import {
     NoSpacesDirective,
     UppercaseDirective,
     LowerCaseDirective,
+    ConfirmComponent,
   ],
-  imports: [CommonModule],
   exports: [
+    //Prime
     BadgeModule,
     SidebarModule,
     InputTextModule,
@@ -48,7 +61,6 @@ import {
     AutoCompleteModule,
     CalendarModule,
     ChipsModule,
-    DropdownModule,
     InputMaskModule,
     InputNumberModule,
     CascadeSelectModule,
@@ -58,12 +70,34 @@ import {
     RadioButtonModule,
     InputSwitchModule,
     RippleModule,
-    BrowserAnimationsModule,
+    ToastModule,
+    DialogModule,
+    OverlayPanelModule,
+    TableModule,
+    ConfirmDialogModule,
+    SidebarModule,
+    ConfirmPopupModule,
+    TooltipModule,
+    AutoCompleteModule,
+    ChipsModule,
+    DropdownModule,
+    InputMaskModule,
+    InputNumberModule,
+    CascadeSelectModule,
+    MultiSelectModule,
+    InputTextareaModule,
+    InputTextModule,
+    ProgressBarModule,
+    PanelModule,
+
+    //
+
     OnlyAlphabetsDirective,
     OnlyNumbersDirective,
     NoSpacesDirective,
     UppercaseDirective,
     LowerCaseDirective,
+    ConfirmComponent,
   ],
 })
 export class SharedModule {}

@@ -55,7 +55,7 @@ export class OverlaysDemoComponent implements OnInit {
         this.confirmationService.confirm({
             key: 'confirm1',
             message: 'Are you sure to perform this action?'
-        });
+        })
     }
 
     confirm2(event: Event) {

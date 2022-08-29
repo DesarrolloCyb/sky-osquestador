@@ -2,6 +2,7 @@ import { LayoutComponent } from './../../_shared/layout/layout/layout.component'
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OrdenesComponent } from './dashboard/ordenes.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -11,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes), ],
+  exports: [RouterModule],
 })
-export class OrdenesRoutingModule { }
+export class OrdenesRoutingModule {}

@@ -66,6 +66,7 @@ export class CancelacionComponent implements OnInit {
   msgs: Message[] = [];
   msgs1:any;
   validador = [false]
+  aux: string | undefined;
 
   //▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ CONSTRUCTOR ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
@@ -83,7 +84,11 @@ export class CancelacionComponent implements OnInit {
 
   //▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ FUNCIONES DE FORMAULARIO ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
   fechaFormat(date:Date){
-    let fecha = (date.getFullYear() + '-'+ date.getMonth() + '-'+ date.getDay());
+    let mes =String(date.getMonth())
+    if (mes.length == 1){
+      this.aux = '0'+ mes
+    }
+    let fecha = (date.getFullYear() + '-'+ this.aux + '-'+ date.getDay());
     return fecha
   }
 

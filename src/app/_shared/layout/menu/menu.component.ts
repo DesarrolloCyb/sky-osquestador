@@ -40,6 +40,8 @@ export class MenuComponent implements OnInit {
 
       {
         label: 'Capturas',
+        icon: 'pi pi-fw pi-compass',
+        routerLink: ['/capturas'],
         items: [
           {
             label: 'Cancelación',
@@ -49,7 +51,7 @@ export class MenuComponent implements OnInit {
           {
             label: 'Quejas',
             icon: 'pi pi-fw pi-thumbs-down',
-            routerLink: ['/capturas/cancelacion'],
+            routerLink: ['/capturas/quejas'],
           },
         ]
       },

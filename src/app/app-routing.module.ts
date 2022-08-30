@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
+    data: { breadcrumb: 'Home' },
     loadChildren: () =>
       import('./pages/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
@@ -25,14 +26,11 @@ const routes: Routes = [
   },
   {
     path: 'capturas',
+    data: { breadcrumb: 'Capturas' },
     loadChildren: () =>
       import('./pages/capturas/capturas.module').then((m) => m.CapturasModule),
   },
-  {
-    path: 'ordenes',
-    loadChildren: () =>
-      import('./pages/ordenes/ordenes.module').then((m) => m.OrdenesModule),
-  },
+
 
   //DEMOS
   {

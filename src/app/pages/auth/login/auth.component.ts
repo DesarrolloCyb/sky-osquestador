@@ -26,7 +26,7 @@ export class AuthComponent {
 
   onSignIn() {
     this.formLogin.markAllAsTouched();
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/home']);
     /*
         if (this.formLogin.valid) {
             this.inicioSesionService

@@ -7,6 +7,7 @@ import { CancelacionComponent } from './cancelacion/cancelacion.component';
 const routes: Routes = [
   {
     path: 'cancelacion',
+    data: { breadcrumb: 'Cancelación' },
     component: LayoutComponent,
     children: [{ path: '', component: CancelacionComponent }],
   },

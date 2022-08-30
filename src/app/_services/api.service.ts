@@ -18,8 +18,8 @@ export class APIService {
   }
   //POST: Ingresa una cuenta del formulario cancelacion en la tabla
   postTry(link:string , values: any): Observable<any> {
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(this.APIurl + link, values, { headers });
+    
+    return this.http.post(this.APIurl + link, values);
   }
 
 

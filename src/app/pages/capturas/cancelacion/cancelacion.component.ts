@@ -63,6 +63,8 @@ export class CancelacionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getTry()
+
 
   }
 
@@ -73,14 +75,14 @@ export class CancelacionComponent implements OnInit {
 
     this.inputs_asigandos = {
       id: 0,
-      tipoCancelacion: this.input_tipoCancelacion,
-      cuenta: this.input_numeroCuenta,
-      ordenServicio: this.input_ordenServicio,
+      tipoCancelacion: String(this.input_tipoCancelacion),
+      cuenta: String(this.input_numeroCuenta),
+      ordenServicio: String(this.input_ordenServicio),
       pais: this.input_pais,
-      fechaCaptura:this.minDate.toLocaleDateString('es-MX'), //Esta fecha es la del dia de la maquina
-      fechaCancelacion: date, //Falta validar fecha mayor al dia actual
-      estatus: 'Pendiente',
-      cve_usuario: this.agenteID //Se obtiene del direcotrio activo
+      fechaCaptura: '2022-08-26T10:28:00',//this.minDate.toLocaleDateString('es-MX'), //Esta fecha es la del dia de la maquina
+      fechaCancelacion: '2022-08-26T10:28:00',//date, //Falta validar fecha mayor al dia actual
+      estatus: "Pendiente",
+      cve_usuario: String(this.agenteID) //Se obtiene del direcotrio activo
 
 
     };
@@ -117,8 +119,21 @@ export class CancelacionComponent implements OnInit {
         {key:'Fecha de corte', value: new Date(this.input_fechaCancelacion).toLocaleDateString()}
 
       ]
+    
 
     }
+    // let datos_api = {
+    //   "id": 0,
+    //   "tipoCancelacion": "Video Single con 1 equipo",
+    //   "cuenta": "MX – MÉXICO",
+    //   "ordenServicio": "81-143696540535",
+    //   "pais": "MX – MÉXICO",
+    //   "fechaCaptura": "2022-08-26T10:25:00",
+    //   "fechaCancelacion": "2022-08-26T10:28:00",
+    //   "estatus": "Pendiente",
+    //   "cve_usuario": "O-EGARCIA"
+    // }
+    
   }
 
   //▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ API ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -132,8 +147,9 @@ export class CancelacionComponent implements OnInit {
   }
 
   postTry(myValues:any){
+    console.log(myValues)
     this.service_api.postTry('/Formularios/GuardarFormulario' , myValues).subscribe(res =>{
-      alert(res.toString)
+      console.log('ENVIADO')
     });
   }
 

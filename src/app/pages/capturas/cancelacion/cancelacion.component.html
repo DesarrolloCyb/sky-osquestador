@@ -84,7 +84,7 @@
             </div>
           </div>
           <ng-template pTemplate="footer">
-            <button pButton icon="pi pi-check" (click)="display=false" label="Confirmar" class="p-button-outlined"></button>
+            <button pButton icon="pi pi-check" (click)="display=false" (click)="this.postTry(this.inputs_asigandos)" label="Confirmar" class="p-button-outlined"></button>
           </ng-template>
         </p-dialog>
         <div class="grid">

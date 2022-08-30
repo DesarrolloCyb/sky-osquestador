@@ -31,7 +31,8 @@ export class CancelacionComponent implements OnInit {
   input_ordenServicio: any;
   input_pais: any;
   input_fechaCaptura: any;
-  input_fechaCancelacion: any;
+  input_fechaCorte: any;
+  input_cveSuper:String | undefined;
 
   agenteID = 123456; //Debe salir del direcotrio activo
   //▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬VARIABLES ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -59,7 +60,8 @@ export class CancelacionComponent implements OnInit {
   mostrandoResultados: boolean = false
   display: boolean = false; //Dialogo de confirmacion
   formulario_valido: boolean | undefined;
-  minDate = new Date()
+  today = new Date();
+  minDate = this.today.getFullYear() + '-'+this.today.getMonth + '-'+ this.today.getDay();
   //Alertas y mensajes
   msgs: Message[] = [];
   msgs1:any;
@@ -80,9 +82,15 @@ export class CancelacionComponent implements OnInit {
 
 
   //▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ FUNCIONES DE FORMAULARIO ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+  fechaFormat(date:Date){
+    let fecha = (date.getFullYear() + '-'+ date.getMonth() + '-'+ date.getDay());
+    return fecha
+  }
+
   asignarVariables() {
     //las keys estan fijadas por la api, no se modifican.
-    const date = new Date(this.input_fechaCancelacion).toLocaleDateString();
+
+
 
     this.inputs_asigandos = {
       id: 0,
@@ -90,10 +98,12 @@ export class CancelacionComponent implements OnInit {
       cuenta: String(this.input_numeroCuenta),
       ordenServicio: this.input_ordenServicio,
       pais: this.input_pais,
-      fechaCaptura: '2022-08-26T10:28:00',//this.minDate.toLocaleDateString('es-MX'), //Esta fecha es la del dia de la maquina
-      fechaCancelacion: '2022-08-26T10:28:00',//date, //Falta validar fecha mayor al dia actual
-      estatus: "Pendiente",
-      cve_usuario: String(this.agenteID) //Se obtiene del direcotrio activo
+      fechaCorte: this.fechaFormat(this.input_fechaCorte), //Esta fecha es la del dia de la maquina
+      fechaCaptura: this.fechaFormat(this.today), //Esta fecha es la del dia de la maquina
+      fechaCancelacion: '',//date, //Falta validar fecha mayor al dia actual
+      estatus: "",
+      cve_usuario: String(this.agenteID), //Se obtiene del direcotrio activo
+      cve_supervisor: String(this.input_cveSuper)
 
 
     };
@@ -119,7 +129,7 @@ export class CancelacionComponent implements OnInit {
         { key: 'Cuenta:', value: this.input_numeroCuenta },
         { key: 'Numero de orden:', value: this.input_ordenServicio },
         { key: 'País:', value: this.input_pais },
-        { key: 'Fecha de corte:', value: new Date(this.input_fechaCancelacion).toLocaleDateString() }
+        { key: 'Fecha de corte:', value: new Date(this.input_fechaCorte).toLocaleDateString() }
       ]
     }
   }

@@ -44,6 +44,19 @@
           </span>
         </div>
       </div>
+      <div class="field col-12 md:col-4">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-id-card"></i>
+          </span>
+
+          <span class="p-float-label">
+            <p-inputNumber inputId="text"  [useGrouping]="false" [(ngModel)]="input_cveSuper">
+            </p-inputNumber>
+            <label for="inputnumber">Supervisor</label>
+          </span>
+        </div>
+      </div>
 
       <div class="field col-12 md:col-4">
         <p-dropdown [options]="Pais" [(ngModel)]="input_pais" placeholder="Seleccione un país" [showClear]="true">
@@ -52,7 +65,7 @@
 
       <div class="field col-12 md:col-4">
         <span class="p-float-label">
-          <p-calendar [showIcon]="true"  [minDate]="minDate"  [(ngModel)]="input_fechaCancelacion"    dateFormat="dd/mm/yy"  ></p-calendar>
+          <p-calendar [showIcon]="true"  [minDate]="today"  [(ngModel)]="input_fechaCorte"    dateFormat="yy-mm-dd"  ></p-calendar>
           <label for="inputdate">Fecha de CORTE</label>
         </span>
       </div>

@@ -11,7 +11,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.model = [
       {
-        label: 'Dashboard',
+        label: 'Cyber Room',
         icon: 'pi pi-home',
 
         items: [
@@ -20,13 +20,40 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-fw pi-home',
             routerLink: ['/'],
           },
+          // {
+          //   label: 'Ordenes',
+          //   icon: 'pi pi-fw pi-list',
+          //   routerLink: ['/ordenes'],
+          // },
           {
-            label: 'Ordenes',
-            icon: 'pi pi-fw pi-list',
-            routerLink: ['/ordenes'],
+            label: 'Reportes',
+            icon: 'pi pi-fw pi-chart-bar',
+            routerLink: ['/reportes'],
+          },
+          {
+            label: 'Configuración',
+            icon: 'pi pi-fw pi-cog',
+            routerLink: ['/configuración'],
           },
         ],
       },
+
+      {
+        label: 'Capturas',
+        items: [
+          {
+            label: 'Cancelación',
+            icon: 'pi pi-fw pi-stop-circle',
+            routerLink: ['/capturas/cancelacion'],
+          },
+          {
+            label: 'Quejas',
+            icon: 'pi pi-fw pi-thumbs-down',
+            routerLink: ['/capturas/cancelacion'],
+          },
+        ]
+      },
+
 
       {
         label: 'UI Kit',

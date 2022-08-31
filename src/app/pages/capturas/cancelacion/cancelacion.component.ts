@@ -67,6 +67,7 @@ export class CancelacionComponent implements OnInit {
   msgs1:any;
   validador = [false]
   aux: string | undefined;
+  aux2: string | undefined;
 
   //▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ CONSTRUCTOR ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
@@ -88,7 +89,11 @@ export class CancelacionComponent implements OnInit {
     if (mes.length == 1){
       this.aux = '0'+ mes
     }
-    let fecha = (date.getFullYear() + '-'+ this.aux + '-'+ date.getDay());
+    let day = String(date.getDay())
+    if (day.length == 1){
+      this.aux2 = '0'+ day
+    }
+    let fecha = (date.getFullYear() + '-'+ this.aux + '-'+ this.aux2);
     return fecha
   }
 
@@ -101,11 +106,11 @@ export class CancelacionComponent implements OnInit {
       id: 0,
       tipoCancelacion: this.input_tipoCancelacion,
       cuenta: String(this.input_numeroCuenta),
-      ordenServicio: this.input_ordenServicio,
+      ordenServicio: String(this.input_ordenServicio),
       pais: this.input_pais,
       fechaCorte: this.fechaFormat(this.input_fechaCorte), //Esta fecha es la del dia de la maquina
       fechaCaptura: this.fechaFormat(this.today), //Esta fecha es la del dia de la maquina
-      fechaCancelacion: '',//date, //Falta validar fecha mayor al dia actual
+ 
       estatus: "",
       cve_usuario: String(this.agenteID), //Se obtiene del direcotrio activo
       cve_supervisor: String(this.input_cveSuper)
@@ -123,7 +128,7 @@ export class CancelacionComponent implements OnInit {
     let claves = Object.keys(datos);
     for (let i of claves) {
 
-      if (datos[i] == undefined || datos[i] == "undefined") {
+      if (datos[i] == undefined || datos[i] == "undefined" || datos[i] == "null" || datos[i] == null) {
         this.showErrorViaToast()
         this.formulario_valido = false
 

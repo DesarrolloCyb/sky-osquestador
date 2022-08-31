@@ -2,62 +2,85 @@
 <div class="px-5 min-h-screen flex justify-content-center align-items-center" >
 
   <video src="../../../../assets/videos//hands.mp4" autoplay="true" muted="true" loop="true"  type="video/mp4" style="width: auto; height: 125%; position:fixed; z-index: -1" ></video>
+  <!-- <img src="../../../../assets/login/hands.jpg"  type="video/mp4" style="width: auto; height: 150%; position:fixed; z-index: -1" /> -->
 
-	<form  [formGroup]="formLogin"
-		(ngSubmit)="onSignIn()"
-		class="border-1 surface-border  border-round py-7 px-4 md:px-7 z-1"
-		autocomplete="off" style="background-color: rgba(0,0,0,0.2);">
-<!-- <pre>{{formLogin.get('usuario')?.errors != null ? 'ng-invalid' : ''}}</pre> -->
+	<form  [formGroup]="formLogin" (ngSubmit)="loginSubmitedx()"
+		class="border-2 border-primary-600 border-round py-5 px-4 md:px-7 z-1"
+		autocomplete="off" style="background-color: rgba(255,255,255,0.3); max-width:91%">
 
 		<div class="mb-4" >
-			<div class="text-900 text-xl font-bold mb-2">Log in</div>
-			<span class="text-600 font-medium">
-				Por favor ingrese sus credenciales
+      <img src="../../../../assets/cyber/logo-cyber-azul.png" alt="cyberideas" style="width: 25rem; max-width: 100%" >
+			<div class="text-900 text-xl font-bold mb-2"></div>
+			<span class="text-blue-800 text-xl font-bold mb-2">
+				Ingrese sus credenciales de SKY
 			</span>
 		</div>
 		<div class="flex flex-column">
-			<span class="p-input-icon-left w-full mb-4 field p-fluid" >
+      <!-- ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬CORREO▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ -->
+			<span class="p-input-icon-left w-full  border-primary-600" >
 				<i class="pi pi-envelope"></i>
 				<input id="email"
-					formControlName="usuario"
+					formControlName="email"
 					type="email"
 					pInputText
-					[class]="'w-full md:w-25rem'"
-
-					placeholder="Email" style="background-color: rgba(255, 255, 255,0.3); "><br>
-        <error-message [errors]="formLogin.get('usuario')?.errors"></error-message>
-
+					class="'w-full md:w-25rem'"
+					placeholder="Email" style="background-color: rgba(8, 128, 207, 0.3);  width:100%">
+        <!-- <error-message [errors]="formLogin.get('usuario')?.errors"></error-message> -->
 			</span>
-			<span class="p-input-icon-left w-full mb-4" >
+      <div class="mb-2">
+        <div class="text-red-700" *ngIf="Email.errors?.['required'] && (Email. dirty || Email.touched)">
+          El email es necesario
+      </div>
+      <div class="text-red-700" *ngIf="Email.errors?.['email'] && (Email. dirty || Email.touched)">
+          El correo es inválido
+      </div>
+      </div>
+      <!-- ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬PASSWORD▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ -->
+			<span class="p-input-icon-left w-full  border-primary-600" >
 				<i class="pi pi-lock"></i>
-				<input id="password"
+				<input id="pwd"
 					type="password"
 					pInputText
-					formControlName="password"
+					formControlName="pwd"
 					class="w-full md:w-25rem"
-					placeholder="Contraseña" style="background-color: rgba(255, 255, 255,0.3); ">
+					placeholder="Contraseña" style="background-color: rgba(8, 128, 207, 0.3); ">
 			</span>
+
+      <div  class="mb-2">
+        <div class="text-red-700" *ngIf="PWD.errors?.['required' ] && (PWD. dirty || PWD.touched)">
+          El password es necesario
+      </div>
+      <div class="text-red-700"
+          *ngIf="PWD.errors?.['minlength'] || PWD.errors?. ['maxlength'] && (PWD.dirty || PWD.touched)">
+          El password debe estar entre 6 y 15 caracteres
+      </div>
+      </div>
+
+
+      <!-- ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬RECORDAR USUARIO▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ -->
 			<div class="mb-4 flex flex-wrap gap-3">
 				<div>
-					<p-checkbox formControlName="remember"
+					<p-checkbox formControlName="rememberMe"
 						[binary]="true"
 						name="checkbox"
 						value="val"
 						styleClass="mr-2"></p-checkbox>
 					<label for="checkbox"
-						class="text-900 font-medium mr-8">
+						class="text-blue-800  font-medium mr-8">
 						Recordar Usuario
 					</label>
 				</div>
-				<a class="text-600 cursor-pointer hover:text-primary cursor-pointer ml-auto transition-colors transition-duration-300">
-					Olvide mi contraseña
-				</a>
 			</div>
-			<button (click)="onSignIn()"
-				pButton
 
+  <!-- ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬BOTON▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ -->
+
+			<button (click)="loginSubmitedx()"
+				pButton
+        pRipple
 				label="Log In"
-				class="w-full"style="background-color: rgba(255, 25, 15,0.5); border: 1px solid"></button>
+				class="w-full"style="background-color: rgba(28, 128, 207, 1); border: 1px solid"
+        [disabled]="formLogin.invalid"
+        ></button>
 		</div>
 
 	</form>

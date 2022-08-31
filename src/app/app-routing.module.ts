@@ -10,12 +10,20 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   {
-    path: 'auth',
-    data: { breadcrumb: 'Auth' },
+    path:'', 
+    redirectTo:'/login',
+    pathMatch: 'full'
+  },
+  
+  {
+    path: 'login',
     loadChildren: () =>
       import('./pages/auth/auth.module').then((m) => m.AuthModule),
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { 
+    path: '', 
+    redirectTo: '/home', 
+    pathMatch: 'full' },
   {
     path: 'home',
     data: { breadcrumb: 'Home' },

@@ -3,6 +3,7 @@ import { NotfoundComponent } from './_shared/layout/notfound/notfound.component'
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './_shared/layout/layout/layout.component';
+import { ReportesRoutingModule } from './pages/reportes/reportes-routing.module';
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
@@ -38,6 +39,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/capturas/capturas.module').then((m) => m.CapturasModule),
   },
+  {
+    path: 'reportes',
+    data: { breadcrumb: 'Reportes' },
+    loadChildren: () =>
+      import('./pages/reportes/reportes.module').then((m) => m.ReportesModule),
+  },
+
 
 
   //DEMOS

@@ -11,6 +11,8 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.model = [
       {
+
+///--------------------------------------------------///
         label: 'Cyber Room',
         icon: 'pi pi-home',
 
@@ -20,16 +22,7 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-fw pi-home',
             routerLink: ['/'],
           },
-          // {
-          //   label: 'Ordenes',
-          //   icon: 'pi pi-fw pi-list',
-          //   routerLink: ['/ordenes'],
-          // },
-          {
-            label: 'Reportes',
-            icon: 'pi pi-fw pi-chart-bar',
-            routerLink: ['/reportes'],
-          },
+
           {
             label: 'Configuración',
             icon: 'pi pi-fw pi-cog',
@@ -37,7 +30,7 @@ export class MenuComponent implements OnInit {
           },
         ],
       },
-
+///--------------------------------------------------///
       {
         label: 'Capturas',
         icon: 'pi pi-fw pi-compass',
@@ -45,17 +38,31 @@ export class MenuComponent implements OnInit {
         items: [
           {
             label: 'Cancelación',
-            icon: 'pi pi-fw pi-stop-circle',
+            icon: 'pi pi-fw pi-file-excel',
             routerLink: ['/capturas/cancelacion'],
           },
           {
             label: 'Quejas',
-            icon: 'pi pi-fw pi-thumbs-down',
+            icon: 'pi pi-fw pi-exclamation-triangle',
             routerLink: ['/capturas/quejas'],
           },
         ]
       },
-
+///--------------------------------------------------///
+{
+  label: 'Reportes',
+  icon: 'pi pi-fw pi-compass',
+  routerLink: ['/capturas'],
+  items: [
+    {
+      label: 'Generar',
+      icon: 'pi pi-fw pi-chart-bar',
+      routerLink: ['/reportes'],
+    },
+  ]
+},
+///--------------------------------------------------///
+///--------------------------------------------------///
 
       {
         label: 'UI Kit',

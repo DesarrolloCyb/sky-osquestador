@@ -19,11 +19,15 @@ export class ReportesComponent implements OnInit {
   value = 0;
   interval:any;
 
-  constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {
+  constructor(
+    private confirmationService: ConfirmationService, 
+    private messageService: MessageService
+    ) {
+
     this.reportes = [
-      { label: 'Single Video',   value:{id:'single_video'}},
-      { label: 'Modem en Combo', value:{id:'modem_combo'}},
-      { label: 'BTCEL en combo', value:{id:'btcel_combo'}},
+      { label: 'Single Video',   value:'single_video'},
+      { label: 'Modem en Combo', value:'modem_combo'},
+      { label: 'BTCEL en combo', value:'btcel_combo'},
       ];
   }
 

@@ -71,8 +71,7 @@ export class CancelacionComponent implements OnInit {
 
   //▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ CONSTRUCTOR ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-  constructor
-    (
+  constructor(
       private service_api: APIService,
       private messageService: MessageService
     ) { }
@@ -110,10 +109,10 @@ export class CancelacionComponent implements OnInit {
       pais: this.input_pais,
       fechaCorte: this.fechaFormat(this.input_fechaCorte), //Esta fecha es la del dia de la maquina
       fechaCaptura: this.fechaFormat(this.today), //Esta fecha es la del dia de la maquina
- 
+
       estatus: "",
       cve_usuario: String(this.agenteID), //Se obtiene del direcotrio activo
-      cve_supervisor: String(this.input_cveSuper)
+      cve_supervisor: this.input_cveSuper
 
 
     };

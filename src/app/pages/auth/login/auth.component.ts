@@ -1,66 +1,44 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {
-  UntypedFormBuilder,
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
+    UntypedFormBuilder,
+    UntypedFormControl,
+    UntypedFormGroup,
+    Validators,
 } from '@angular/forms';
 import { environment } from 'environments/environment';
+import { CorsService } from '@services';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './auth.component.html',
+    selector: 'app-root',
+    templateUrl: './auth.component.html',
 })
 export class AuthComponent {
-  rememberMe: boolean = false;
+    rememberMe: boolean = false;
 
-  formLogin: UntypedFormGroup;
-  constructor(private formBuilder: UntypedFormBuilder, private router: Router) {
-    this.formLogin = this.formBuilder.group({
-      usuario: [environment.user, Validators.required],
-      password: [environment.password, Validators.required],
-      remember: [null],
-    });
-  }
+    formLogin: UntypedFormGroup;
+    constructor(private cors: CorsService, private formBuilder: UntypedFormBuilder, private router: Router) {
+        this.formLogin = this.formBuilder.group({
+            email: [environment.user, Validators.required],
+            pWd: [environment.password, Validators.required],
+            remember: [null],
+        });
+    }
 
-  onSignIn() {
-    this.formLogin.markAllAsTouched();
-    this.router.navigate(['/dashboard']);
-    /*
+    onSignIn() {
+        this.formLogin.markAllAsTouched();
+        
+
         if (this.formLogin.valid) {
-            this.inicioSesionService
-                .signIn(formData)
-                .then(async (response: any) => {
-                    if (response.data.usuario) {
-                        this.inicioSesionService.setUser(response.data);
-                    } else {
-                        this.notificationService.show(
-                            '',
-                            'Usuario y/o contraseña incorrecta(s)',
-                            'error',
-                            arguments[0]
-                        );
-                    }
-                })
-                .catch((error: any) => {
-                    console.log(error);
+            this.cors.post('AD/Identity', this.formLogin.value).then((response) => {
+                console.log(response);
 
-                    if (
-                        error.error.errorMessage ==
-                        'Error: Registro no existente.'
-                    ) {
-                        this.notificationService.showError(
-                            'Contacte al administrador',
-                            'Usuario o contraseña incorrectos'
-                        );
-                    } else {
-                        this.notificationService.showError(
-                            'Contacte al administrador',
-                            error.error.errorMessage
-                        );
-                    }
-                });
-        }*/
-  }
+                this.router.navigate(['/home']);
+
+            }).catch((error) => {
+                console.log(error);
+
+            })
+        }
+    }
 }

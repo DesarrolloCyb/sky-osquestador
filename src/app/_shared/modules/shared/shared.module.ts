@@ -36,7 +36,12 @@ import { TableModule } from 'primeng/table';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { TooltipModule } from 'primeng/tooltip';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
+import { CommonModule } from '@angular/common';
+import { ChartModule } from 'primeng/chart';
+import { BrowserModule } from '@angular/platform-browser';
 @NgModule({
   imports:[
 
@@ -98,6 +103,17 @@ import { TooltipModule } from 'primeng/tooltip';
     UppercaseDirective,
     LowerCaseDirective,
     ConfirmComponent,
+
+
+    CommonModule,
+		MessagesModule,
+		MessageModule,
+    ChartModule,
+
+    // BrowserModule,
+    // BrowserAnimationsModule,
+
+
   ],
 })
 export class SharedModule {}

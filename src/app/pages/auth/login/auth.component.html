@@ -4,7 +4,7 @@
   <video src="../../../../assets/videos//hands.mp4" autoplay="true" muted="true" loop="true"  type="video/mp4" style="width: auto; height: 125%; position:fixed; z-index: -1" ></video>
 
 	<form  [formGroup]="formLogin"
-		(ngSubmit)="onSignIn()"
+		
 		class="border-1 surface-border  border-round py-7 px-4 md:px-7 z-1"
 		autocomplete="off" style="background-color: rgba(0,0,0,0.2);">
 <!-- <pre>{{formLogin.get('usuario')?.errors != null ? 'ng-invalid' : ''}}</pre> -->
@@ -19,13 +19,13 @@
 			<span class="p-input-icon-left w-full mb-4 field p-fluid" >
 				<i class="pi pi-envelope"></i>
 				<input id="email"
-					formControlName="usuario"
+					formControlName="email"
 					type="email"
 					pInputText
 					[class]="'w-full md:w-25rem'"
 
 					placeholder="Email" style="background-color: rgba(255, 255, 255,0.3); "><br>
-        <error-message [errors]="formLogin.get('usuario')?.errors"></error-message>
+        <error-message [errors]="formLogin.get('email')?.errors"></error-message>
 
 			</span>
 			<span class="p-input-icon-left w-full mb-4" >
@@ -33,7 +33,7 @@
 				<input id="password"
 					type="password"
 					pInputText
-					formControlName="password"
+					formControlName="pWd"
 					class="w-full md:w-25rem"
 					placeholder="Contraseña" style="background-color: rgba(255, 255, 255,0.3); ">
 			</span>

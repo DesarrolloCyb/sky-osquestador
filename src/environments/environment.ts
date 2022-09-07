@@ -4,9 +4,9 @@
 
 export const environment = {
     production: false,
-    API_URL: '',
-    user: '',
-    password: '',
+    API_URL: 'https://10.251.58.11/api/',
+    user: 'usrconfbot@sky.com.mx',
+    password: 'MJG_37465ftg',
 };
 
 /*
